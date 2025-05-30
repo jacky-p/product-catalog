@@ -53,12 +53,13 @@
 
 @media (width <= 640px) {
   .layout {
+    flex-direction: column;
     justify-content: center;
     overflow-x: hidden;
   }
 
   .sidebar {
-    display: none;
+    width: 100%;
   }
   .mainContent {
     padding: 10px;
