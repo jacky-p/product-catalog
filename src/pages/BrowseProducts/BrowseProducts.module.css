@@ -1,0 +1,12 @@
+.pageContainer {
+  margin: 20px 50px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  justify-items: center;
+  justify-content: center;
+}

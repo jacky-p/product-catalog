@@ -1,0 +1,38 @@
+.pageContainer {
+  margin: 65px 200px;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: row;
+
+  align-items: stretch;
+  column-gap: 0;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 500px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cartButton {
+  width: 100%;
+  background-color: powderblue;
+  margin-bottom: 0.67em;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

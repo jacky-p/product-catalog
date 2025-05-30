@@ -1,0 +1,9 @@
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 900;
+  font-size: 2.2rem;
+}

@@ -1,0 +1,20 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+
+import App from "./App";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import BrowseProducts from "./pages/BrowseProducts/BrowseProducts";
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route index element={<BrowseProducts />} />
+      <Route path="product/:id" element={<ProductDetail />} />
+    </Route>
+  )
+);
+
+export default routes;
