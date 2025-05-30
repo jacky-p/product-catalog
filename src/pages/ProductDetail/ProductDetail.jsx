@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 function ProductDetail() {
   const location = useLocation();
   const product = location.state;
-  console.log(product);
+  //console.log(product);
   return (
     <div className={styles.pageContainer}>
       <div className={styles.productContainer}>

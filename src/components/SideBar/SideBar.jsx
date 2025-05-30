@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faFilter } from "@fortawesome/free-solid-svg-icons";
+import ProductFilter from "../ProductFilter/ProductFilter";
 
-export default function Sidebar({ children }) {
+export default function Sidebar({
+  filters,
+  setFilters,
+  handleFilterAction,
+  children,
+}) {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
@@ -20,7 +26,12 @@ export default function Sidebar({ children }) {
         </div>
 
         {!isCollapsed && (
-          <p className={styles.sidebarFilter}>Filter goes here</p>
+          <ProductFilter
+            filters={filters}
+            setFilters={setFilters}
+            handleFilterAction={handleFilterAction}
+          />
+          // <p className={styles.sidebarFilter}>Filter goes here</p>
         )}
       </div>
 
