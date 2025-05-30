@@ -30,9 +30,9 @@ export default function BrowseProducts() {
     category: "",
     priceRange: "",
   };
-  const [filters, setFilters] = useState(defaultFilters);
+  const [filters, setFilters] = useState(defaultFilters); //filters from the form UI
 
-  const [appliedFilters, setAppliedFilters] = useState(defaultFilters);
+  const [appliedFilters, setAppliedFilters] = useState(defaultFilters); //filters that modify product list
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -48,6 +48,7 @@ export default function BrowseProducts() {
     fetchProducts();
   }, []);
 
+  //Filters are onlu applied once all filters are applied and products are fetched
   useEffect(() => {
     if (products) {
       const result = filterProducts(products, appliedFilters);
@@ -55,32 +56,7 @@ export default function BrowseProducts() {
     }
   }, [appliedFilters, products]);
 
-  // function filterProducts(f, products) {
-  //   let filteredProducts = products;
-  //   console.log("before filter:", filteredProducts);
-
-  //   if (f.category) {
-  //     filteredProducts = filteredProducts.filter(
-  //       (product) => product.category === f.category
-  //     );
-  //     console.log("category filter:", filteredProducts);
-  //   }
-
-  //   if (f.priceRange) {
-  //     const [min, max] = f.priceRange.split("-").map(Number);
-  //     filteredProducts = filteredProducts.filter(
-  //       (product) => product.price >= min && product.price <= max
-  //     );
-  //   }
-  //   console.log("after filter:", filteredProducts);
-  //   setdisplayProducts(filteredProducts); //resets the displayed products to those that fit the filters
-  // }
-
-  // const handleFilterSubmit = () => {
-  //   //function called if filter form is submitted
-  //   filterProducts();
-  // };
-
+  //Handles both form Submit and Reset
   const handleFilterAction = (action) => {
     if (action.type === "submit") {
       console.log("Apply Filters action received! Current filters:", filters);
@@ -95,7 +71,6 @@ export default function BrowseProducts() {
   console.log("all products: ", products);
   console.log("display products: ", displayProducts);
   console.log("filters: ", filters);
-  // console.log(products);
 
   return (
     <Sidebar

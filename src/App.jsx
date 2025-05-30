@@ -4,7 +4,7 @@ import Sidebar from "./components/SideBar/SideBar";
 
 export default function App() {
   return (
-    <div>
+    <>
       <Header />
 
       <Outlet />
@@ -14,6 +14,6 @@ export default function App() {
       {/* <div style={{ padding: "16px 0", textAlign: "center" }}>
         © 2025 My Company
       </div> */}
-    </div>
+    </>
   );
 }

@@ -32,7 +32,6 @@ export default function Sidebar({
               setFilters={setFilters}
               handleFilterAction={handleFilterAction}
             />
-            // <p className={styles.sidebarFilter}>Filter goes here</p>
           )}
         </div>
       </div>

@@ -1,41 +1,24 @@
 import React from "react";
 import styles from "./ProductFilter.module.css";
 
-function ProductFilter({
-  filters,
-  setFilters,
-  handleFilterAction,
-  //   category,
-  //   setCategory,
-  //   priceRange,
-  //   setPriceRange,
-}) {
+function ProductFilter({ filters, setFilters, handleFilterAction }) {
   // Handle change of any filter input
   function handleChange(event) {
-    //setCategory(event.target.value);
-
     const { name, value } = event.target;
-
-    console.log(name, value);
-    console.log("before: ", filters);
 
     setFilters((prev) => ({
       ...prev,
       [name]: value,
     }));
-
-    console.log("after: ", filters);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     handleFilterAction({ type: "submit" });
-    console.log("Form Submitted!");
   }
 
   function handleReset(event) {
     event.preventDefault();
-    //handleFilterSubmit(filters);
     handleFilterAction({ type: "reset" });
   }
 

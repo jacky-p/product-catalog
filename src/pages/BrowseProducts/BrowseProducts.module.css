@@ -1,6 +1,7 @@
-.pageContainer {
+/* .pageContainer {
   margin: 20px 50px;
-}
+  text-align: center;
+} */
 
 .productGrid {
   display: grid;
@@ -9,4 +10,11 @@
   padding: 16px;
   justify-items: center;
   justify-content: center;
+}
+
+@media (width <= 640px) {
+  .pageContainer {
+    /* margin: 20px 50px; */
+    text-align: center;
+  }
 }
