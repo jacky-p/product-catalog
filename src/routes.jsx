@@ -14,7 +14,10 @@ const routes = createBrowserRouter(
       <Route index element={<BrowseProducts />} />
       <Route path="product/:id" element={<ProductDetail />} />
     </Route>
-  )
+  ),
+  {
+    basename: "/product-catalog",
+  }
 );
 
 export default routes;
