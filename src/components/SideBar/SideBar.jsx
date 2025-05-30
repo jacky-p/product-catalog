@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "./Sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faFilter } from "@fortawesome/free-solid-svg-icons";
 import ProductFilter from "../ProductFilter/ProductFilter";
+import styles from "./Sidebar.module.css";
 
 export default function Sidebar({
   filters,
@@ -25,14 +25,16 @@ export default function Sidebar({
           </button>
         </div>
 
-        {!isCollapsed && (
-          <ProductFilter
-            filters={filters}
-            setFilters={setFilters}
-            handleFilterAction={handleFilterAction}
-          />
-          // <p className={styles.sidebarFilter}>Filter goes here</p>
-        )}
+        <div className={styles.filterContianer}>
+          {!isCollapsed && (
+            <ProductFilter
+              filters={filters}
+              setFilters={setFilters}
+              handleFilterAction={handleFilterAction}
+            />
+            // <p className={styles.sidebarFilter}>Filter goes here</p>
+          )}
+        </div>
       </div>
 
       <div className={styles.mainContent}>{children}</div>

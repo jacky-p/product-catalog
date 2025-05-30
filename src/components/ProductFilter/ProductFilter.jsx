@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./ProductFilter.module.css";
 
 function ProductFilter({
   filters,
@@ -35,30 +36,48 @@ function ProductFilter({
   function handleReset(event) {
     event.preventDefault();
     //handleFilterSubmit(filters);
-    handleFilterAction({ type: "submit" });
+    handleFilterAction({ type: "reset" });
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <select name="category" value={filters.category} onChange={handleChange}>
-        <option value="">All Categories</option>
-        <option value="Accessories">Accessories</option>
-        <option value="Apparel">Apparel</option>
-        <option value="Electronics">Electronics</option>
-      </select>
+    <form onSubmit={handleSubmit} className={styles.filterForm}>
+      <label>
+        Select A Category
+        <select
+          name="category"
+          value={filters.category}
+          className={styles.filterSelect}
+          onChange={handleChange}
+        >
+          <option value="">All Categories</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Apparel">Apparel</option>
+          <option value="Electronics">Electronics</option>
+        </select>
+      </label>
 
-      <select
-        name="priceRange"
-        value={filters.priceRange}
-        onChange={handleChange}
+      <label>
+        Select A Price Range
+        <select
+          name="priceRange"
+          value={filters.priceRange}
+          className={styles.filterSelect}
+          onChange={handleChange}
+        >
+          <option value="">All Prices</option>
+          <option value="0-30">$0 - $30</option>
+          <option value="30-50">$30 - $50</option>
+        </select>
+      </label>
+
+      <button type="submit" className={styles.submitButton}>
+        Apply Filters
+      </button>
+      <button
+        type="button"
+        className={styles.resetButton}
+        onClick={handleReset}
       >
-        <option value="">All Prices</option>
-        <option value="0-30">$0 - $30</option>
-        <option value="30-50">$30 - $50</option>
-      </select>
-
-      <button type="submit">Apply Filters</button>
-      <button type="button" onClick={handleReset}>
         Reset
       </button>
     </form>
