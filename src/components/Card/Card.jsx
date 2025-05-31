@@ -8,7 +8,7 @@ const Card = ({ product }) => {
       <img src={product.image} className={styles.cardImg} />
       <div className={styles.cardContent}>
         <h2>{product.name}</h2>
-        <p>${product.price}</p>
+        <p>${product.price.toFixed(2)}</p>
       </div>
     </Link>
   );

@@ -4,7 +4,7 @@ import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
 
 const CartPage = () => {
-  const { cartItems } = useOutletContext();
+  const { cartItems, removeFromCart, updateQuantity } = useOutletContext();
 
   let total = 0;
   cartItems.forEach((item) => {
@@ -23,10 +23,31 @@ const CartPage = () => {
               <div className={styles.productImgContainer}>
                 <img className={styles.productImg} src={item.image} />
               </div>
+
               <div className={styles.details}>
                 <div className={styles.productName}>{item.name}</div>
                 <div className={styles.price}>${item.price.toFixed(2)}</div>
-                <div className={styles.quantity}>Quantity: {item.quantity}</div>
+                <div className={styles.controls}>
+                  <p>Quantity: </p>
+                  <select
+                    value={item.quantity}
+                    onChange={(e) =>
+                      updateQuantity(item.id, Number(e.target.value))
+                    }
+                  >
+                    {[...Array(100)].map((_, i) => (
+                      <option key={i + 1} value={i + 1}>
+                        {i + 1}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <button
+                  className={styles.removeBtn}
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  Remove
+                </button>
               </div>
             </div>
           ))}

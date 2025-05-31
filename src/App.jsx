@@ -1,9 +1,24 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const stored = localStorage.getItem("cart");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  //local storage so that cart persists through reloads
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCartItems(JSON.parse(storedCart));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prev) => {
@@ -24,13 +39,35 @@ export default function App() {
     });
   };
 
+  const removeFromCart = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    console.log("CART: ", cartItems);
+  };
+
+  const updateQuantity = (id, quantity) => {
+    setCartItems((prev) => {
+      const index = prev.findIndex((item) => item.id === id);
+
+      const updatedCart = [...prev];
+      updatedCart[index] = {
+        ...updatedCart[index],
+        quantity: quantity,
+      };
+
+      console.log("CART: ", cartItems);
+      return updatedCart;
+    });
+  };
+
   console.log("CART ITEMS GLOBAL: ", cartItems);
 
   return (
     <>
       <Header />
 
-      <Outlet context={{ cartItems, addToCart }} />
+      <Outlet
+        context={{ cartItems, addToCart, removeFromCart, updateQuantity }}
+      />
 
       {/* Content in SideBar via Outlet*/}
 

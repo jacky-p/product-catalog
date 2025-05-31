@@ -24,6 +24,17 @@
   flex-direction: column;
 }
 
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.removeBtn {
+  border: 1px solid black;
+  max-width: 120px;
+}
 .total {
   font-size: 16px;
   font-weight: bold;
@@ -37,7 +48,16 @@
 }
 
 @media (width <= 640px) {
+  .pageContainer {
+    padding: 35px;
+  }
   .productImg {
-    max-width: 100px;
+    max-width: 150px;
+  }
+
+  .removeBtn {
+    font-size: 12px;
+    height: 25px;
+    padding: 2px 0px;
   }
 }
