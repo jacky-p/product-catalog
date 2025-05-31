@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faFilter } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faFilter,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import ProductFilter from "../ProductFilter/ProductFilter";
 import styles from "./Sidebar.module.css";
 
@@ -21,8 +25,43 @@ export default function Sidebar({
             className={styles.toggleBtn}
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
-            <FontAwesomeIcon icon={isCollapsed ? faFilter : faArrowLeft} />
+            <FontAwesomeIcon
+              className={styles.sidebarIcon}
+              icon={isCollapsed ? faFilter : faArrowLeft}
+            />
           </button>
+
+          {isCollapsed ? (
+            <button
+              className={styles.toggleMobileBtn}
+              onClick={() => setIsCollapsed(!isCollapsed)}
+            >
+              Filter
+            </button>
+          ) : (
+            <button
+              className={styles.toggleMobileExit}
+              onClick={() => setIsCollapsed(!isCollapsed)}
+            >
+              <FontAwesomeIcon
+                className={styles.sidebarMobileIcon}
+                icon={faXmark}
+              />
+            </button>
+          )}
+          {/* <button
+            className={styles.toggleMobileBtn}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            {isCollapsed ? (
+              "Filter"
+            ) : (
+              <FontAwesomeIcon
+                className={styles.sidebarMobileIcon}
+                icon={faXmark}
+              />
+            )}
+          </button> */}
         </div>
 
         <div className={styles.filterContianer}>

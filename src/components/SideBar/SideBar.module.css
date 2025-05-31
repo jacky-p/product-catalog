@@ -40,6 +40,18 @@
   cursor: pointer;
 }
 
+.toggleMobileBtn {
+  display: none;
+}
+
+.toggleMobileExit {
+  display: none;
+}
+
+.sidebarMobileIcon {
+  display: none;
+}
+
 .filterContianer {
   display: flex;
   justify-content: center;
@@ -59,8 +71,53 @@
   }
 
   .sidebar {
+    box-sizing: border-box;
     width: 100%;
+    padding: 20px;
   }
+
+  .collapsed {
+    padding: 0px;
+    padding-top: 10px;
+  }
+
+  .sidebarHeader {
+    padding: 0px;
+  }
+
+  .sidebarMobileIcon {
+    display: block;
+  }
+
+  .sidebarIcon {
+    display: none;
+  }
+
+  .toggleMobileBtn {
+    display: block;
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-size: 23px;
+    font-weight: 300;
+    padding: 0px;
+  }
+  .toggleMobileExit {
+    display: block;
+    background: none;
+    border: none;
+  }
+
+  .toggleBtn {
+    display: none;
+  }
+
+  .filterContianer {
+    display: block;
+    padding: 0px;
+    padding-bottom: 10px;
+  }
+
   .mainContent {
     padding: 10px;
   }

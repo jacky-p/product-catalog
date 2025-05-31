@@ -1,11 +1,13 @@
 import React from "react";
 //import reactLogo from "./assets/react.svg";
 import styles from "./ProductDetail.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useOutletContext } from "react-router-dom";
 
 function ProductDetail() {
   const location = useLocation();
   const product = location.state;
+
+  const { addToCart } = useOutletContext();
   //console.log(product);
   return (
     <div className={styles.pageContainer}>
@@ -20,7 +22,15 @@ function ProductDetail() {
             <p>{product.description}</p>
           </div>
           <div className={styles.buttonContainer}>
-            <button className={styles.cartButton}>Add to Cart</button>
+            <button
+              className={styles.cartButton}
+              onClick={() => {
+                console.log("button clicked");
+                addToCart(product);
+              }}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

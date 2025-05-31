@@ -8,7 +8,9 @@ export default function Header() {
   return (
     <header className={styles.title}>
       <Link to="/">NestShop</Link>
-      <FontAwesomeIcon icon={faCartShopping} />
+      <Link to="cart">
+        <FontAwesomeIcon icon={faCartShopping} />
+      </Link>
     </header>
   );
 }
