@@ -17,9 +17,12 @@ const CartPage = () => {
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <>
+        <div className={styles.cartGrid}>
           {cartItems.map((item) => (
             <div key={item.id} className={styles.item}>
+              <div className={styles.productImgContainer}>
+                <img className={styles.productImg} src={item.image} />
+              </div>
               <div className={styles.details}>
                 <div className={styles.productName}>{item.name}</div>
                 <div className={styles.price}>${item.price.toFixed(2)}</div>
@@ -37,7 +40,7 @@ const CartPage = () => {
           >
             Proceed to Checkout
           </button>
-        </>
+        </div>
       )}
     </div>
   );
