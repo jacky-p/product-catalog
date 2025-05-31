@@ -7,3 +7,26 @@
   font-weight: 900;
   font-size: 2.2rem;
 }
+
+.logo {
+  max-height: 100px;
+}
+
+.cart {
+  color: #79c8a3;
+}
+
+.cart:hover {
+  color: #aa2c86;
+}
+
+@media (width <= 640px) {
+  .title {
+    padding: 0px 25px;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    max-height: 60px;
+  }
+}

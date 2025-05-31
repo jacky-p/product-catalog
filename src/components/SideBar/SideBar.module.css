@@ -30,12 +30,13 @@
 .sidebarTitle {
   font-size: 25px;
   font-weight: bold;
+  color: #aa2c86;
 }
 
 .toggleBtn {
   background: none;
   border: none;
-  color: rgb(74, 74, 74);
+  color: #aa2c86;
   font-size: 18px;
   cursor: pointer;
 }
@@ -101,11 +102,15 @@
     font-size: 23px;
     font-weight: 300;
     padding: 0px;
+    background-color: #aa2c86;
+    color: white;
   }
   .toggleMobileExit {
     display: block;
     background: none;
     border: none;
+    color: #aa2c86;
+    font-size: 18px;
   }
 
   .toggleBtn {

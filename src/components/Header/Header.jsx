@@ -7,8 +7,10 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   return (
     <header className={styles.title}>
-      <Link to="/">NestShop</Link>
-      <Link to="cart">
+      <Link to="/">
+        <img className={styles.logo} src="public/logo.svg" />
+      </Link>
+      <Link to="cart" className={styles.cart}>
         <FontAwesomeIcon icon={faCartShopping} />
       </Link>
     </header>

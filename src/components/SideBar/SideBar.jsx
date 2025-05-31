@@ -22,6 +22,7 @@ export default function Sidebar({
         <div className={styles.sidebarHeader}>
           {!isCollapsed && <span className={styles.sidebarTitle}>Filter</span>}
           <button
+            title="Filter"
             className={styles.toggleBtn}
             onClick={() => setIsCollapsed(!isCollapsed)}
           >

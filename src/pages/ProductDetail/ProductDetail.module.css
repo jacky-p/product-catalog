@@ -32,8 +32,14 @@
 
 .cartButton {
   width: 100%;
-  background-color: powderblue;
+  background-color: #79c8a3;
+  font-weight: bold;
   margin-bottom: 0.67em;
+}
+
+.cartButton:hover {
+  border: none;
+  background-color: #68ad8d;
 }
 
 .detailsContainer {
