@@ -1,5 +1,4 @@
 import React from "react";
-//import reactLogo from "./assets/react.svg";
 import styles from "./ProductDetail.module.css";
 import { useLocation, useOutletContext } from "react-router-dom";
 
@@ -8,7 +7,6 @@ function ProductDetail() {
   const product = location.state;
 
   const { addToCart } = useOutletContext();
-  //console.log(product);
   return (
     <div className={styles.pageContainer}>
       <div className={styles.productContainer}>
@@ -25,7 +23,6 @@ function ProductDetail() {
             <button
               className={styles.cartButton}
               onClick={() => {
-                console.log("button clicked");
                 addToCart(product);
               }}
             >

@@ -30,18 +30,15 @@ export default function App() {
           ...newCart[existingIndex],
           quantity: newCart[existingIndex].quantity + 1,
         };
-        console.log("CART: ", newCart);
         return newCart;
       }
-      //If product not in cart
-      console.log("CART: ", [...prev, { ...product, quantity: 1 }]);
+
       return [...prev, { ...product, quantity: 1 }];
     });
   };
 
   const removeFromCart = (id) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
-    console.log("CART: ", cartItems);
   };
 
   const updateQuantity = (id, quantity) => {
@@ -54,12 +51,9 @@ export default function App() {
         quantity: quantity,
       };
 
-      console.log("CART: ", cartItems);
       return updatedCart;
     });
   };
-
-  console.log("CART ITEMS GLOBAL: ", cartItems);
 
   return (
     <>
@@ -68,12 +62,6 @@ export default function App() {
       <Outlet
         context={{ cartItems, addToCart, removeFromCart, updateQuantity }}
       />
-
-      {/* Content in SideBar via Outlet*/}
-
-      {/* <div style={{ padding: "16px 0", textAlign: "center" }}>
-        © 2025 My Company
-      </div> */}
     </>
   );
 }

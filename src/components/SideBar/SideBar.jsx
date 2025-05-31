@@ -50,19 +50,6 @@ export default function Sidebar({
               />
             </button>
           )}
-          {/* <button
-            className={styles.toggleMobileBtn}
-            onClick={() => setIsCollapsed(!isCollapsed)}
-          >
-            {isCollapsed ? (
-              "Filter"
-            ) : (
-              <FontAwesomeIcon
-                className={styles.sidebarMobileIcon}
-                icon={faXmark}
-              />
-            )}
-          </button> */}
         </div>
 
         <div className={styles.filterContianer}>

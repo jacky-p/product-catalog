@@ -62,15 +62,12 @@ export default function BrowseProducts() {
       console.log("Apply Filters action received! Current filters:", filters);
       setAppliedFilters(filters);
     } else if (action.type === "reset") {
+      // Reset the UI dropdowns
       console.log("Reset filters action received!");
-      setFilters(defaultFilters); // Reset the UI dropdowns
+      setFilters(defaultFilters);
       setAppliedFilters(defaultFilters);
     }
   };
-
-  console.log("all products: ", products);
-  console.log("display products: ", displayProducts);
-  console.log("filters: ", filters);
 
   return (
     <Sidebar
