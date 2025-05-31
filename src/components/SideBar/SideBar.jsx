@@ -23,7 +23,7 @@ export default function Sidebar({
           {!isCollapsed && <span className={styles.sidebarTitle}>Filter</span>}
           <button
             title="Filter"
-            className={styles.toggleBtn}
+            className={styles.toggleButton}
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
             <FontAwesomeIcon
@@ -34,7 +34,7 @@ export default function Sidebar({
 
           {isCollapsed ? (
             <button
-              className={styles.toggleMobileBtn}
+              className={styles.toggleMobileButton}
               onClick={() => setIsCollapsed(!isCollapsed)}
             >
               Filter

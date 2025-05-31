@@ -4,7 +4,7 @@
 }
 
 .sidebar {
-  background-color: #efefef;
+  background-color: #f7f7f7;
   color: rgb(74, 74, 74);
   width: 220px;
   transition: width 0.3s ease;
@@ -33,7 +33,7 @@
   color: #aa2c86;
 }
 
-.toggleBtn {
+.toggleButton {
   background: none;
   border: none;
   color: #aa2c86;
@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.toggleMobileBtn {
+.toggleMobileButton {
   display: none;
 }
 
@@ -94,7 +94,7 @@
     display: none;
   }
 
-  .toggleMobileBtn {
+  .toggleMobileButton {
     display: block;
     width: 200px;
     height: 50px;
@@ -113,7 +113,7 @@
     font-size: 18px;
   }
 
-  .toggleBtn {
+  .toggleButton {
     display: none;
   }
 

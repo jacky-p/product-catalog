@@ -2,14 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 0px 24px;
   border-bottom: 1px solid #ddd;
-  font-weight: 900;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+}
+
+.title a {
+  height: 70px;
+  align-content: center;
 }
 
 .logo {
-  max-height: 100px;
+  max-height: 70px;
 }
 
 .cart {

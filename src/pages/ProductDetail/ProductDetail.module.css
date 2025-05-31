@@ -4,6 +4,16 @@
   flex-direction: column;
 }
 
+.backButtonContainer {
+  display: flex;
+  padding: 50px;
+  padding-bottom: 0px;
+}
+
+.backButton {
+  padding: 5px;
+}
+
 .productContainer {
   display: flex;
   flex-direction: row;
@@ -65,6 +75,12 @@
 @media (width <= 640px) {
   .productContainer {
     padding: 35px;
+  }
+
+  .backButtonContainer {
+    justify-content: center;
+    padding: 0;
+    padding-top: 30px;
   }
 
   .descriptionContianer h1 {

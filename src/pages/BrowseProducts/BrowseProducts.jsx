@@ -76,7 +76,9 @@ export default function BrowseProducts() {
       handleFilterAction={handleFilterAction}
     >
       <div className={styles.pageContainer}>
-        <h1>Products</h1>
+        <h2 className={styles.headerTitle}>
+          Products ({displayProducts.length})
+        </h2>
         <div className={styles.productGrid}>
           {displayProducts.map((product) => {
             return <Card key={product.id} product={product} />;

@@ -2,6 +2,10 @@
   padding: 50px;
 }
 
+.backButtonContainer {
+  padding-bottom: 20px;
+}
+
 .cartHeader {
   font-size: 36px;
   margin: 0;
@@ -31,8 +35,9 @@
   column-gap: 10px;
 }
 
-.removeBtn {
-  border: 1px solid black;
+.removeButton {
+  color: rgb(220, 0, 0);
+  border: 1px solid rgb(220, 0, 0);
   max-width: 120px;
 }
 .total {
@@ -42,7 +47,7 @@
   padding: 5px 0px;
 }
 
-.checkoutBtn {
+.checkoutButton {
   background-color: #aa2c86;
   color: white;
 }
@@ -51,11 +56,17 @@
   .pageContainer {
     padding: 35px;
   }
+
+  .backButtonContainer {
+    display: flex;
+    justify-content: center;
+  }
+
   .productImg {
     max-width: 150px;
   }
 
-  .removeBtn {
+  .removeButton {
     font-size: 12px;
     height: 25px;
     padding: 2px 0px;
