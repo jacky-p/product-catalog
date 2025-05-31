@@ -58,7 +58,6 @@ export default function App() {
   return (
     <>
       <Header />
-
       <Outlet
         context={{ cartItems, addToCart, removeFromCart, updateQuantity }}
       />

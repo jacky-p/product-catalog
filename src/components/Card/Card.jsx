@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ product }) => {
+function Card({ product }) {
   return (
     <Link to={`/product/${product.id}`} state={product} className={styles.card}>
       <img src={product.image} className={styles.cardImg} />
@@ -12,6 +12,6 @@ const Card = ({ product }) => {
       </div>
     </Link>
   );
-};
+}
 
 export default Card;
